@@ -43,7 +43,7 @@ int main()
         switch (tecla)
         {
         case '1':
-            /* code */
+            /*code*/
             break;
         case '2':
             /* code */
@@ -73,7 +73,7 @@ int main()
             /* code */
             break;
         case 'A':
-            /* code */
+            gpio_put(LED_G, 1); // Acende o LED verde
             break;
         case 'B':
             /* code */
