@@ -1,49 +1,36 @@
-/**
- * @brief Implementação de um teclado alfanúmerico de 16 teclas para controle
- * de LEDs (RGB) e um buzzer.
- */
-
 #include <stdio.h>
 #include "pico/stdlib.h"
 
-/******* Variaveis Globias e Definições gerais *******/
 
 #define LED_G       11 //LED verde
 #define LED_B       12 //LED Azul
 #define LED_R       13 //LED Vermelho
-
 #define buzzer_pin  21 //Buzzer A da BitDog
 
-#define lins 4 //Linhas Teclado
-#define cols 4 //Colunas Teclado
+//definição dos pinos do teclado matricial
+#define lins 4
+#define cols 4
 
-const uint8_t lin_pins[lins] = {8,7,6,5}; //Pinos de Conexão Linhas Teclado
-const uint8_t col_pins[cols] = {4,3,2,1}; //Pinos de Conexão Colunas Teclado
+//vetores pinos teclado
+const uint8_t lin_pins[lins] = {8,7,6,5};
+const uint8_t col_pins[cols] = {4,3,2,1};
 
-/************ Prototipos de Funções ********************/
-
-void inicia_pinos();
+//prototipo de funções
+void iniciar_pinos();
 char ler_teclado();
-void som_buz(uint16_t freq, uint16_t duration_ms);
 
+//Funções
+int main() {
+  stdio_init_all();
+  iniciar_pinos();
 
-/********************* Função Main ********************/
-int main()
-{
-    //Inicia o sistema
-    inicia_pinos();
-    stdio_init_all();
-
-    while (true) 
-    {
-        //Fazer leitura do teclado
-        char tecla = ler_teclado();
-
-        //Verificar a ação a ser adotada
-        switch (tecla)
+  while (true) 
+  {
+    char key  =  ler_teclado();
+          switch (key)
         {
         case '1':
-            /* code */
+            som_buz(261, 500); // Frequência da nota dó e duração de 0,5 segundo
             break;
         case '2':
             /* code */
@@ -73,7 +60,7 @@ int main()
             /* code */
             break;
         case 'A':
-            /* code */
+            gpio_put(LED_G, 1); // Acende o LED verde
             break;
         case 'B':
             /* code */
@@ -93,16 +80,13 @@ int main()
         default:
             break;
         }
-    }
+
+    sleep_ms(100);
+  }
 }
 
-/***** Implemtação das Funções dos Desenvolvedores *****/
+void iniciar_pinos(){
 
-/**
- * @brief Função utilizada para configurar as GPIOs
- */
-void inicia_pinos()
-{
     //Iniciar buzzer
     gpio_init(buzzer_pin);
     gpio_set_dir(buzzer_pin, GPIO_OUT);
@@ -117,59 +101,46 @@ void inicia_pinos()
     gpio_init(LED_R);
     gpio_set_dir(LED_R, GPIO_OUT);
 
-    //Iniciar Colunas do Teclado como Saída Digital
-    for(int i = 0; i<cols; i++)
-    {
-        gpio_init(col_pins[i]);
-        gpio_set_dir(col_pins[i], GPIO_OUT);
-        gpio_put(col_pins[i], 0);
-    }
+  for(int i = 0; i<cols; i++)
+  {
+    gpio_init(col_pins[i]);
+    gpio_set_dir(col_pins[i], GPIO_OUT);
+    gpio_put(col_pins[i], 0);
+  }
 
-    //Iniciar Linhas do Teclado como Entrada Digital
-    for(int i = 0; i<lins; i++)
-    {
-        gpio_init(lin_pins[i]);
-        gpio_set_dir(lin_pins[i], GPIO_IN);
-        gpio_pull_down(lin_pins[i]);
-    }  
+  for(int i = 0; i<lins; i++)
+  {
+    gpio_init(lin_pins[i]);
+    gpio_set_dir(lin_pins[i], GPIO_IN);
+    gpio_pull_down(lin_pins[i]);
+  }
 }
 
-/**
- * @brief Função usada para varrer o teclado
- */
-char ler_teclado()
-{
-    //mapa de teclas do teclado
-    const char key_map[lins][cols] = 
+char ler_teclado(){
+  //mapa de teclas do teclado
+  const char key_map[lins][cols] = {
+    {'1','2','3','A'},
+    {'4','5','6','B'},
+    {'7','8','9','C'},
+    {'*','0','#','D'}
+  };
+
+  for(int col = 0; col<cols; col++)
+  {
+    gpio_put(col_pins[col], 1);
+    for(int row= 0; row<lins; row++)
     {
-        {'1','2','3','A'},
-        {'4','5','6','B'},
-        {'7','8','9','C'},
-        {'*','0','#','D'}
-    };
-    
-    //Verificar se alguma tecla foi pressionada
-    for(int col = 0; col<cols; col++)
-    {
-        gpio_put(col_pins[col], 1);
-        for(int lin = 0; lin<lins; lin++)
-        {
-        if(gpio_get(lin_pins[lin]))
-        {
-            gpio_put(col_pins[col], 0);
-            return key_map[lin][col];
-        }
-        }
+      if(gpio_get(lin_pins[row]))
+      {
         gpio_put(col_pins[col], 0);
+        return key_map[row][col];
+      }
     }
-    return '\0';
+    gpio_put(col_pins[col], 0);
+  }
+  return '\0';
 }
 
-/**
- * @brief função usada para escolher o tom do buzzer
- * @param freq frequência a ser reproduzida (variavel do tipo uint16_t)
- * @param duration_ms duração do sinal em milisegundos ((variavel do tipo uint16_t))
- */
 void som_buz(uint16_t freq, uint16_t duration_ms)
 {
     uint period = 1000000 / freq;  // Período do sinal em microssegundos
