@@ -29,6 +29,11 @@ int main() {
     {
         //Fazer leitura do teclado
         char tecla = ler_teclado();
+        if(tecla != '\0')
+        {
+            printf("%c", tecla);
+            sleep_ms(100);
+        }
 
         //Verificar a ação a ser adotada
         switch (tecla)
