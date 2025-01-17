@@ -67,7 +67,7 @@ int main() {
             si();
             break;
         case '8':
-            /* code */
+            natal1();
             break;
         case '9':
             /* code */
@@ -131,6 +131,86 @@ void la(){
 
 void si(){
     /*code*/
+}
+
+void natal1(){
+    //Noite Feliz - Natal 1
+
+    sol();
+    sleep_ms(100);
+    la();
+    sol();
+    mi();
+
+    sleep_ms(1000);
+
+    sol();
+    sleep_ms(100);
+    la();
+    sol();
+    mi();
+
+    sleep_ms(1000);
+
+    re();
+    sleep_ms(100);
+    re();
+    sleep_ms(100);
+    si();
+
+    sleep_ms(1000);
+
+    doh();
+    sleep_ms(100);
+    doh();
+    sol();
+
+    sleep_ms(1000);
+
+    la();
+    sleep_ms(100);
+    la();
+    doh();
+    si();
+    la();
+    sol();
+    sleep_ms(100);
+    la();
+    sol();
+    mi();
+
+    sleep_ms(1000);
+
+    la();
+    sleep_ms(100);
+    la();
+    doh();
+    si();
+    la();
+    sol();
+    sleep_ms(100);
+    la();
+    sol();
+    mi();
+
+    re();
+    sleep_ms(100);
+    re();
+    fa();
+    re();
+    si();
+    sleep_ms(100);
+    mi();
+
+    sleep_ms(1000);
+
+    doh();
+    sol();
+    mi();
+    sleep_ms(100);
+    fa();
+    re();
+    doh();
 }
 
 void iniciar_pinos(){
