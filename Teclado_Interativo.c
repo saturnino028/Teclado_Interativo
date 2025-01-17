@@ -19,6 +19,13 @@ const uint8_t col_pins[cols] = {4,3,2,1};
 void iniciar_pinos();
 char ler_teclado();
 void som_buz(uint16_t freq, uint16_t duration_ms);
+void doh();
+void re();
+void mi();
+void fa();
+void sol();
+void la();
+void si();
 
 //Funções
 int main() {
@@ -39,25 +46,25 @@ int main() {
         switch (tecla)
         {
         case '1':
-            som_buz(261, 500); // Frequência da nota dó e duração de 0,5 segundo
+            doh();
             break;
         case '2':
-            /* code */
+            re();
             break;
         case '3':
-            /* code */
+            mi();
             break;
         case '4':
-            /* code */
+            fa();
             break;
         case '5':
-            /* code */
+            sol();
             break;
         case '6':
-            /* code */
+            la();
             break;
         case '7':
-            /* code */
+            si();
             break;
         case '8':
             /* code */
@@ -92,6 +99,36 @@ int main() {
 
     sleep_ms(100);
   }
+}
+
+// Funções das notas musicais
+
+void doh(){
+    som_buz(261, 500); // Frequência da nota dó e duração de 0,5 segundo
+}
+
+void re(){
+    /*code*/
+}
+
+void mi(){
+    som_buz(330, 500); // Frequência da nota mi e duração de 0,5 segundo
+}
+
+void fa(){
+    /*code*/
+}
+
+void sol(){
+    /*code*/
+}
+
+void la(){
+    /*code*/
+}
+
+void si(){
+    /*code*/
 }
 
 void iniciar_pinos(){
