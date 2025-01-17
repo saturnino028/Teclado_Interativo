@@ -18,6 +18,7 @@ const uint8_t col_pins[cols] = {4,3,2,1};
 //prototipo de funções
 void iniciar_pinos();
 char ler_teclado();
+void som_buz(uint16_t freq, uint16_t duration_ms);
 
 //Funções
 int main() {
