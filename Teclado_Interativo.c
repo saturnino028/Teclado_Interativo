@@ -45,7 +45,7 @@ int main() {
             /* code */
             break;
         case '3':
-            /* code */
+            som_buz(330, 500); // Frequência da nota mi e duração de 0,5 segundo
             break;
         case '4':
             /* code */
