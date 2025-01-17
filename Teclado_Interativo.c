@@ -39,6 +39,12 @@ int main()
         //Fazer leitura do teclado
         char tecla = ler_teclado();
 
+        if(tecla != '\0')
+        {
+            printf("Tecla: %c\n", tecla);
+            sleep_ms(200);
+        }
+
         //Verificar a ação a ser adotada
         switch (tecla)
         {
@@ -93,6 +99,7 @@ int main()
         default:
             break;
         }
+        sleep_ms(20);
     }
 }
 
@@ -154,11 +161,11 @@ char ler_teclado()
         gpio_put(col_pins[col], 1);
         for(int lin = 0; lin<lins; lin++)
         {
-        if(gpio_get(lin_pins[lin]))
-        {
-            gpio_put(col_pins[col], 0);
-            return key_map[lin][col];
-        }
+            if(gpio_get(lin_pins[lin]))
+            {
+                gpio_put(col_pins[col], 0);
+                return key_map[lin][col];
+            }
         }
         gpio_put(col_pins[col], 0);
     }
