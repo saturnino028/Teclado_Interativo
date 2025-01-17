@@ -70,10 +70,10 @@ int main() {
             /* code */
             break;
         case '9':
-            /* code */
+            toca_jingle_bells();
             break;
         case '0':
-            /* code */
+            toca_we_wish_you();
             break;
         case 'A':
             gpio_put(LED_G, 1); // Acende o LED verde
@@ -202,4 +202,42 @@ void som_buz(uint16_t freq, uint16_t duration_ms)
         sleep_us(period / 2);  // Espera metade do período
     }
 
+}
+
+void toca_musica(uint buzzer, int frequencia, int duracao) {
+    if (frequencia == 0) {
+        sleep_ms(duracao);
+        return;
+    }
+    int half_period = 1000000 / (2 * frequencia);
+    int cycles = frequency * duracao / 1000;
+
+    for (int i = 0; i < cycles; i++) {
+        gpio_put(buzzer, 1);
+        sleep_us(half_period);
+        gpio_put(buzzer, 0);
+        sleep_us(half_period);
+    }
+}
+
+void toca_jingle_bells() {
+    int melody[] = {330, 330, 330, 330, 330, 330, 330, 392, 261, 294, 330, 349, 349, 349, 349, 349, 330, 330, 330, 294, 294, 330, 294, 392};
+    int durations[] = {250, 250, 500, 250, 250, 500, 250, 250, 250, 250, 500, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 500, 500, 1000};
+    int length = sizeof(melody) / sizeof(melody[0]);
+
+    for (int i = 0; i < length; i++) {
+        play_tone(BUZZER_PIN, melody[i], durations[i]);
+        sleep_ms(100);
+    }
+}
+
+void toca_we_wish_you() {
+    int melody[] = {392, 330, 349, 392, 392, 392, 440, 392, 349, 330, 330, 349, 392, 330, 349, 392, 392, 349, 330, 349, 294};
+    int durations[] = {500, 500, 500, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 1000};
+    int length = sizeof(melody) / sizeof(melody[0]);
+
+    for (int i = 0; i < length; i++) {
+        play_tone(BUZZER_PIN, melody[i], durations[i]);
+        sleep_ms(100);
+    }
 }
