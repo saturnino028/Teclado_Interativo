@@ -75,7 +75,7 @@ int main() {
             /* code */
             break;
         case 'C':
-            /* code */
+            gpio_put(LED_R, 1); // Acende o LED vermelho
             break;
         case 'D':
             /* code */
