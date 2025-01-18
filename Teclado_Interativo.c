@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 
-
+//Definição dos pinos de GPIO
 #define LED_G       11 //LED verde
 #define LED_B       12 //LED Azul
 #define LED_R       13 //LED Vermelho
@@ -36,6 +36,8 @@ int main() {
     {
         //Fazer leitura do teclado
         char tecla = ler_teclado();
+
+        //Printar a tecla pressionada
         if(tecla != '\0')
         {
             printf("%c", tecla);
