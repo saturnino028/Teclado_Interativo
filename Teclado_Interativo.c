@@ -128,7 +128,7 @@ void sol(){
 }
 
 void la(){
-    /*code*/
+  som_buz(440, 500); // Frequência da nota mi e duração de 0,5 segundo
 }
 
 void si(){
@@ -285,6 +285,7 @@ void som_buz(uint16_t freq, uint16_t duration_ms)
     }
 
 }
+<<<<<<< HEAD
 
 // Função para desligar tudo (LEDs e buzzer)
 void desligar_tudo() {
@@ -293,3 +294,5 @@ void desligar_tudo() {
     gpio_put(LED_R, 0); // Desliga o LED vermelho
     gpio_put(buzzer_pin, 0); // Desliga o buzzer
 }
+=======
+>>>>>>> origin/lisyanne07-patch-1
