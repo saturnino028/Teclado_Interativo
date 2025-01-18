@@ -126,7 +126,7 @@ void sol(){
 }
 
 void la(){
-    /*code*/
+  som_buz(440, 500); // Frequência da nota mi e duração de 0,5 segundo
 }
 
 void si(){
