@@ -26,6 +26,8 @@ void fa();
 void sol();
 void la();
 void si();
+void natal1();
+void desligar_tudo();
 
 //Funções
 int main() {
