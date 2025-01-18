@@ -126,7 +126,7 @@ void fa(){
 }
 
 void sol(){
-    /*code*/
+    som_buz(392, 500); // Frequência da nota sol e duração de 0,5 segundo
 }
 
 void la(){
