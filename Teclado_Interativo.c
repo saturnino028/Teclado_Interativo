@@ -29,6 +29,7 @@ void si();
 void natal1();
 void desligar_tudo();
 void ligar_tudo();
+void notas();
 
 //Funções
 int main() {
@@ -304,4 +305,16 @@ void ligar_tudo() {
     gpio_put(LED_B, 1); // Liga o LED azul
     gpio_put(LED_R, 1); // Liga o LED vermelho
     gpio_put(buzzer_pin, 1); // Liga o buzzer
+    notas(); // Toca as notas musicais
+}
+
+// Função para tocar notas musicais
+void notas() {
+    doh();
+    re();
+    mi();
+    fa();
+    sol();
+    la();
+    si();
 }
