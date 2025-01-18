@@ -92,7 +92,7 @@ int main() {
             gpio_put(LED_B, 1); // Acende o LED azul
             break;
         case '*':
-            /* code */
+            desligar_tudo();
             break;
         case '#':
             /* code */
@@ -204,4 +204,12 @@ void som_buz(uint16_t freq, uint16_t duration_ms)
         sleep_us(period / 2);  // Espera metade do período
     }
 
+}
+
+// Função para desligar tudo (LEDs e buzzer)
+void desligar_tudo() {
+    gpio_put(LED_G, 0); // Desliga o LED verde
+    gpio_put(LED_B, 0); // Desliga o LED azul
+    gpio_put(LED_R, 0); // Desliga o LED vermelho
+    gpio_put(buzzer_pin, 0); // Desliga o buzzer
 }
