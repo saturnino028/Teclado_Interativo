@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 
-
+//Definição dos pinos de GPIO
 #define LED_G       11 //LED verde
 #define LED_B       12 //LED Azul
 #define LED_R       13 //LED Vermelho
@@ -36,6 +36,8 @@ int main() {
     {
         //Fazer leitura do teclado
         char tecla = ler_teclado();
+
+        //Printar a tecla pressionada
         if(tecla != '\0')
         {
             printf("%c", tecla);
@@ -67,7 +69,7 @@ int main() {
             si();
             break;
         case '8':
-            /* code */
+            natal1();
             break;
         case '9':
             /* code */
@@ -90,7 +92,7 @@ int main() {
             gpio_put(LED_B, 1); // Acende o LED azul
             break;
         case '*':
-            /* code */
+            desligar_tudo();
             break;
         case '#':
             /* code */
@@ -126,11 +128,91 @@ void sol(){
 }
 
 void la(){
-    /*code*/
+  som_buz(440, 500); // Frequência da nota mi e duração de 0,5 segundo
 }
 
 void si(){
     /*code*/
+}
+
+void natal1(){
+    //Noite Feliz - Natal 1
+
+    sol();
+    sleep_ms(100);
+    la();
+    sol();
+    mi();
+
+    sleep_ms(1000);
+
+    sol();
+    sleep_ms(100);
+    la();
+    sol();
+    mi();
+
+    sleep_ms(1000);
+
+    re();
+    sleep_ms(100);
+    re();
+    sleep_ms(100);
+    si();
+
+    sleep_ms(1000);
+
+    doh();
+    sleep_ms(100);
+    doh();
+    sol();
+
+    sleep_ms(1000);
+
+    la();
+    sleep_ms(100);
+    la();
+    doh();
+    si();
+    la();
+    sol();
+    sleep_ms(100);
+    la();
+    sol();
+    mi();
+
+    sleep_ms(1000);
+
+    la();
+    sleep_ms(100);
+    la();
+    doh();
+    si();
+    la();
+    sol();
+    sleep_ms(100);
+    la();
+    sol();
+    mi();
+
+    re();
+    sleep_ms(100);
+    re();
+    fa();
+    re();
+    si();
+    sleep_ms(100);
+    mi();
+
+    sleep_ms(1000);
+
+    doh();
+    sol();
+    mi();
+    sleep_ms(100);
+    fa();
+    re();
+    doh();
 }
 
 void iniciar_pinos(){
@@ -202,4 +284,13 @@ void som_buz(uint16_t freq, uint16_t duration_ms)
         sleep_us(period / 2);  // Espera metade do período
     }
 
+}
+
+
+// Função para desligar tudo (LEDs e buzzer)
+void desligar_tudo() {
+    gpio_put(LED_G, 0); // Desliga o LED verde
+    gpio_put(LED_B, 0); // Desliga o LED azul
+    gpio_put(LED_R, 0); // Desliga o LED vermelho
+    gpio_put(buzzer_pin, 0); // Desliga o buzzer
 }
