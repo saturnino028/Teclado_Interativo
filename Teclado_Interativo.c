@@ -81,7 +81,7 @@ int main() {
             gpio_put(LED_G, 1); // Acende o LED verde
             break;
         case 'B':
-            /* code */
+            gpio_put(LED_B, 1); // Acende o LED azul
             break;
         case 'C':
             gpio_put(LED_R, 1); // Acende o LED vermelho
@@ -120,7 +120,7 @@ void mi(){
 }
 
 void fa(){
-    /*code*/
+    som_buz(349, 500); // Frequência da nota fá e duração de 0,5 segundo
 }
 
 void sol(){
@@ -285,6 +285,7 @@ void som_buz(uint16_t freq, uint16_t duration_ms)
     }
 
 }
+
 
 // Função para desligar tudo (LEDs e buzzer)
 void desligar_tudo() {
