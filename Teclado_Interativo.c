@@ -136,7 +136,7 @@ void la(){
 }
 
 void si(){
-    /*code*/
+    som_buz(493, 500); // Frequência da nota si e duração de 0,5 segundo
 }
 
 void natal1(){
