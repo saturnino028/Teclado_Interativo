@@ -84,12 +84,18 @@ int main() {
             alarme();
             break;
         case 'A':
+            gpio_put(LED_B, 0); // Apaga o LED azul
+            gpio_put(LED_R, 0); // Apaga o LED vermelho
             gpio_put(LED_G, 1); // Acende o LED verde
             break;
         case 'B':
+            gpio_put(LED_R, 0); // Apaga o LED vermelho
+            gpio_put(LED_G, 0); // Apaga o LED verde
             gpio_put(LED_B, 1); // Acende o LED azul
             break;
         case 'C':
+            gpio_put(LED_B, 0); // Apaga o LED azul
+            gpio_put(LED_G, 0); // Apaga o LED verde
             gpio_put(LED_R, 1); // Acende o LED vermelho
             break;
         case 'D':
