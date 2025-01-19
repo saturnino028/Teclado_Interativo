@@ -5,7 +5,7 @@
 #define LED_G       11 //LED verde
 #define LED_B       12 //LED Azul
 #define LED_R       13 //LED Vermelho
-#define BUZZER  21 //Buzzer A da BitDog
+#define buzzer_pin  21 //Buzzer A da BitDog
 
 //definição dos pinos do teclado matricial
 #define lins 4
@@ -141,9 +141,8 @@ void si(){
     som_buz(493, 500); // Frequência da nota si e duração de 0,5 segundo
 }
 
+//Noite Feliz - Natal 1
 void natal1(){
-    //Noite Feliz - Natal 1
-
     sol();
     sleep_ms(100);
     la();
@@ -221,8 +220,8 @@ void natal1(){
     doh();
 }
 
+//Jingle Bells - Natal 2
 void natal2(){
-    //Jingle Bells - Natal 2
     mi(); sleep_ms(200);
     mi(); sleep_ms(200);
     mi(); sleep_ms(400);
@@ -259,8 +258,8 @@ void natal2(){
     mi(); sleep_ms(1500);
 }
 
+// We wish you a Merry Christmas - Natal 3
 void natal3() {
-    // We wish you a Merry Christmas - Natal 3
     sol(); la(); sol(); fa();
     mi(); fa();
     sol(); sol(); sol(); fa();
@@ -303,8 +302,8 @@ void natal3() {
     la(); sol();
     sleep_ms(800);
 }
-void iniciar_pinos(){
 
+void iniciar_pinos(){
     //Iniciar buzzer
     gpio_init(buzzer_pin);
     gpio_set_dir(buzzer_pin, GPIO_OUT);
@@ -373,7 +372,6 @@ void som_buz(uint16_t freq, uint16_t duration_ms)
     }
 
 }
-
 
 // Função para desligar tudo (LEDs e buzzer)
 void desligar_tudo() {
