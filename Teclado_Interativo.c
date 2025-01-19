@@ -116,7 +116,7 @@ void doh(){
 }
 
 void re(){
-    /*code*/
+    som_buz(293, 500); // Frequência da nota ré e duração de 0,5 segundo
 }
 
 void mi(){
