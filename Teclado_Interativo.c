@@ -392,31 +392,21 @@ void desligar_tudo() {
     gpio_put(buzzer_pin, 0); // Desliga o buzzer
 }
 
-//Liga o buzzer por tempo indeterminado
-void som_infinito(uint16_t freq) {
-    uint period = 1000000 / freq;  // Período do sinal em microssegundos
-
-    while (1) {  // Loop infinito para som contínuo
-        gpio_put(buzzer_pin, 1);  // Liga o buzzer
-        sleep_us(period / 2);  // Espera metade do período
-        gpio_put(buzzer_pin, 0);  // Desliga o buzzer
-        sleep_us(period / 2);  // Espera metade do período
-
-        // Lê o teclado
-        char key = ler_teclado();
-
-        // Verifica se a tecla '*' foi pressionada
-        if (key == '*') {
-            break;  // Encerra o loop se '*' for pressionado
-        }
-    }
-}
-
 // Função para ligar tudo (LEDs e buzzer)
 void ligar_tudo() {
     gpio_put(LED_G, 1); // Liga o LED verde
     gpio_put(LED_B, 1); // Liga o LED azul
     gpio_put(LED_R, 1); // Liga o LED vermelho
-    gpio_put(buzzer_pin, 1); // Liga o buzzer
-    som_infinito(1000); // Toca as notas musicais
+    notas(); // Toca as notas musicais
+}
+
+// Função para tocar notas musicais
+void notas() {
+    doh();
+    re();
+    mi();
+    fa();
+    sol();
+    la();
+    si();
 }
