@@ -28,7 +28,7 @@ void la();
 void si();
 void natal1();
 void natal2();
-void natal3();
+void alarme();
 void desligar_tudo();
 void ligar_tudo();
 void notas();
@@ -81,7 +81,7 @@ int main() {
             natal2();
             break;
         case '0':
-            natal3();
+            alarme();
             break;
         case 'A':
             gpio_put(LED_G, 1); // Acende o LED verde
@@ -142,166 +142,177 @@ void si(){
 }
 
 //Noite Feliz - Natal 1
-void natal1(){
-    sol();
-    sleep_ms(100);
-    la();
-    sol();
-    mi();
+void natal1() {
+    // Noite Feliz - Melodia com notas longas e curtas
+    som_buz(392, 500);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(440, 500);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(392, 500);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(330, 1200); // Mi (nota longa)
+    sleep_ms(400);      // Pausa longa
 
-    sleep_ms(1000);
+    som_buz(392, 500);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(440, 500);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(392, 500);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(330, 1200); // Mi (nota longa)
+    sleep_ms(400);      // Pausa longa
 
-    sol();
-    sleep_ms(100);
-    la();
-    sol();
-    mi();
+    som_buz(294, 500);  // Ré
+    sleep_ms(200);      // Pausa
+    som_buz(294, 500);  // Ré
+    sleep_ms(200);      // Pausa
+    som_buz(246, 800);  // Si
+    sleep_ms(200);      // Pausa
+    som_buz(261, 500);  // Dó
+    sleep_ms(200);      // Pausa
+    som_buz(261, 500);  // Dó longa
+    sleep_ms(400);      // Pausa longa
+    som_buz(220, 900);  // Sol
+    sleep_ms(200);      // Pausa
 
-    sleep_ms(1000);
+     som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(261, 400);  // Dó
+    sleep_ms(200);      // Pausa
+    som_buz(246, 400);  // Si
+    sleep_ms(200);      // Pausa
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(196, 800);  // Sol
+    sleep_ms(400);      // Pausa longa
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(196, 400);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(164, 800);  // Mi
+    sleep_ms(500);
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(261, 400);  // Dó
+    sleep_ms(200);      // Pausa
+    som_buz(246, 400);  // Si
+    sleep_ms(200);      // Pausa
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(196, 800);  // Sol
+    sleep_ms(400);      // Pausa longa
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(196, 400);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(164, 800);  // Mi
 
-    re();
-    sleep_ms(100);
-    re();
-    sleep_ms(100);
-    si();
+    sleep_ms(500);
 
-    sleep_ms(1000);
+        som_buz(293, 400);  // Ré
+    sleep_ms(200);      // Pausa
+    som_buz(293, 400);  // Ré
+    sleep_ms(200);      // Pausa
+    som_buz(349, 400);  // Fá
+    sleep_ms(200);      // Pausa
+    som_buz(293, 400);  // Ré
+    sleep_ms(200);      // Pausa
+    som_buz(246, 400);  // Si
+    sleep_ms(200);      // Pausa
+    som_buz(261, 400);  // Dó
+    sleep_ms(200);      // Pausa
+    som_buz(330, 800);  // Mi (longa)
+    sleep_ms(400);      // Pausa longa
 
-    doh();
-    sleep_ms(100);
-    doh();
-    sol();
-
-    sleep_ms(1000);
-
-    la();
-    sleep_ms(100);
-    la();
-    doh();
-    si();
-    la();
-    sol();
-    sleep_ms(100);
-    la();
-    sol();
-    mi();
-
-    sleep_ms(1000);
-
-    la();
-    sleep_ms(100);
-    la();
-    doh();
-    si();
-    la();
-    sol();
-    sleep_ms(100);
-    la();
-    sol();
-    mi();
-
-    re();
-    sleep_ms(100);
-    re();
-    fa();
-    re();
-    si();
-    sleep_ms(100);
-    mi();
-
-    sleep_ms(1000);
-
-    doh();
-    sol();
-    mi();
-    sleep_ms(100);
-    fa();
-    re();
-    doh();
+    som_buz(261, 400);  // Dó
+    sleep_ms(200);      // Pausa
+    som_buz(196, 400);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(330, 400);  // Mi
+    sleep_ms(200);      // Pausa
+    som_buz(196, 400);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(349, 400);  // Fá
+    sleep_ms(200);      // Pausa
+    som_buz(293, 400);  // Ré
+    sleep_ms(200);      // Pausa
+    som_buz(261, 400);  // Dó
+    sleep_ms(200);      // Pausa    // Pausa
 }
+
 
 //Jingle Bells - Natal 2
-void natal2(){
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(400);
-  
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(400);
+void natal2() {
+    // Natal 2 - Jingle Bells (Parte 2)
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 500);  // Mi longa
+    sleep_ms(300);      // Pausa
 
-    mi(); sleep_ms(200);
-    sol(); sleep_ms(200);
-    doh(); sleep_ms(200);
-    re(); sleep_ms(200);
-    mi(); sleep_ms(600);
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 500);  // Mi longa
+    sleep_ms(300);      // Pausa
 
-    fa(); sleep_ms(200);
-    fa(); sleep_ms(200);
-    fa(); sleep_ms(200);
-    fa(); sleep_ms(200);
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(392, 300);  // Sol
+    sleep_ms(100);      // Pausa
+    som_buz(261, 300);  // Dó
+    sleep_ms(100);      // Pausa
+    som_buz(293, 300);  // Ré
+    sleep_ms(100);      // Pausa
+    som_buz(330, 800);  // Mi longa
+    sleep_ms(300);      // Pausa
 
-    fa(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    re(); sleep_ms(200);
-    re(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    re(); sleep_ms(200);
-
-    sol(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    doh(); sleep_ms(200);
-    re(); sleep_ms(200);
-    mi(); sleep_ms(1500);
+    som_buz(349, 300);  // Fá
+    sleep_ms(100);      // Pausa
+    som_buz(349, 300);  // Fá
+    sleep_ms(100);      // Pausa
+    som_buz(349, 300);  // Fá longa
+    sleep_ms(100);      // Pausa
+    som_buz(349, 300);  // Fá
+    sleep_ms(100);      // Pausa
+    som_buz(349, 300);  // Fá
+    sleep_ms(100);      // Pausa
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(392, 400);  // Sol longa
+    sleep_ms(100);      // Pausa
+    som_buz(392, 500);  // Sol
+    sleep_ms(100);      // Pausa
+    som_buz(349, 500);  // Fá
+    sleep_ms(100);      // Pausa
+    som_buz(293, 500);  // Ré
+    sleep_ms(100);      // Pausa
+    som_buz(261, 1200);
 }
 
-// We wish you a Merry Christmas - Natal 3
-void natal3() {
-    sol(); la(); sol(); fa();
-    mi(); fa();
-    sol(); sol(); sol(); fa();
-    mi(); re();
-    sleep_ms(200);
-
-    la(); la(); sol(); fa();
-    mi(); fa();
-    sol(); sol(); la(); sol();
-    fa();
-    sleep_ms(200);
-
-    la(); la(); si(); la();
-    sol(); fa();
-    sol(); doh(); doh(); si();
-    la(); sol();
-    sleep_ms(400);
-
-    sol(); sol(); la(); sol();
-    fa(); mi(); fa();
-    sol(); sol(); la(); sol();
-    fa();
-    sleep_ms(200);
-
-    la(); la(); si(); la();
-    sol(); fa();
-    sol(); doh(); doh(); si();
-    la(); sol();
-    sleep_ms(400);
-
-    sol(); sol(); la(); sol();
-    fa(); mi(); fa();
-    sol(); sol(); la(); sol();
-    fa();
-    sleep_ms(200);
-
-    la(); la(); si(); la();
-    sol(); fa();
-    sol(); doh(); doh(); si();
-    la(); sol();
-    sleep_ms(800);
+// alarme
+void alarme() {
+    // Alarme: Alternando entre 1000 Hz e 2000 Hz
+    for (int i = 0; i < 5; i++) { // Repetir 5 vezes para o efeito contínuo
+        som_buz(1000, 300);  // Frequência baixa (1000 Hz) - Som curto
+        sleep_ms(100);       // Pausa curta
+        som_buz(2000, 300);  // Frequência alta (2000 Hz) - Som curto
+        sleep_ms(100);       // Pausa curta
+    }
 }
+
 
 void iniciar_pinos(){
     //Iniciar buzzer
@@ -387,16 +398,24 @@ void ligar_tudo() {
     gpio_put(LED_B, 1); // Liga o LED azul
     gpio_put(LED_R, 1); // Liga o LED vermelho
     gpio_put(buzzer_pin, 1); // Liga o buzzer
-    notas(); // Toca as notas musicais
+    som_infinito(1000); // Toca as notas musicais
 }
 
-// Função para tocar notas musicais
-void notas() {
-    doh();
-    re();
-    mi();
-    fa();
-    sol();
-    la();
-    si();
+void som_infinito(uint16_t freq) {
+    uint period = 1000000 / freq;  // Período do sinal em microssegundos
+
+    while (1) {  // Loop infinito para som contínuo
+        gpio_put(buzzer_pin, 1);  // Liga o buzzer
+        sleep_us(period / 2);  // Espera metade do período
+        gpio_put(buzzer_pin, 0);  // Desliga o buzzer
+        sleep_us(period / 2);  // Espera metade do período
+
+        // Lê o teclado
+        char key = ler_teclado();
+
+        // Verifica se a tecla '*' foi pressionada
+        if (key == '*') {
+            break;  // Encerra o loop se '*' for pressionado
+        }
+    }
 }
