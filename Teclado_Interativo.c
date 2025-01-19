@@ -28,7 +28,7 @@ void la();
 void si();
 void natal1();
 void natal2();
-void natal3();
+void alarme();
 void desligar_tudo();
 void ligar_tudo();
 void notas();
@@ -81,7 +81,7 @@ int main() {
             natal2();
             break;
         case '0':
-            natal3();
+            alarme();
             break;
         case 'A':
             gpio_put(LED_G, 1); // Acende o LED verde
@@ -302,50 +302,17 @@ void natal2() {
     som_buz(261, 1200);
 }
 
-// We wish you a Merry Christmas - Natal 3
-void natal3() {
-    sol(); la(); sol(); fa();
-    mi(); fa();
-    sol(); sol(); sol(); fa();
-    mi(); re();
-    sleep_ms(200);
-
-    la(); la(); sol(); fa();
-    mi(); fa();
-    sol(); sol(); la(); sol();
-    fa();
-    sleep_ms(200);
-
-    la(); la(); si(); la();
-    sol(); fa();
-    sol(); doh(); doh(); si();
-    la(); sol();
-    sleep_ms(400);
-
-    sol(); sol(); la(); sol();
-    fa(); mi(); fa();
-    sol(); sol(); la(); sol();
-    fa();
-    sleep_ms(200);
-
-    la(); la(); si(); la();
-    sol(); fa();
-    sol(); doh(); doh(); si();
-    la(); sol();
-    sleep_ms(400);
-
-    sol(); sol(); la(); sol();
-    fa(); mi(); fa();
-    sol(); sol(); la(); sol();
-    fa();
-    sleep_ms(200);
-
-    la(); la(); si(); la();
-    sol(); fa();
-    sol(); doh(); doh(); si();
-    la(); sol();
-    sleep_ms(800);
+// alarme
+void alarme() {
+    // Alarme: Alternando entre 1000 Hz e 2000 Hz
+    for (int i = 0; i < 5; i++) { // Repetir 5 vezes para o efeito contínuo
+        som_buz(1000, 300);  // Frequência baixa (1000 Hz) - Som curto
+        sleep_ms(100);       // Pausa curta
+        som_buz(2000, 300);  // Frequência alta (2000 Hz) - Som curto
+        sleep_ms(100);       // Pausa curta
+    }
 }
+
 
 void iniciar_pinos(){
     //Iniciar buzzer
