@@ -246,41 +246,60 @@ void natal1() {
 
 
 //Jingle Bells - Natal 2
-void natal2(){
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(400);
-  
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(400);
+void natal2() {
+    // Natal 2 - Jingle Bells (Parte 2)
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 500);  // Mi longa
+    sleep_ms(300);      // Pausa
 
-    mi(); sleep_ms(200);
-    sol(); sleep_ms(200);
-    doh(); sleep_ms(200);
-    re(); sleep_ms(200);
-    mi(); sleep_ms(600);
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 500);  // Mi longa
+    sleep_ms(300);      // Pausa
 
-    fa(); sleep_ms(200);
-    fa(); sleep_ms(200);
-    fa(); sleep_ms(200);
-    fa(); sleep_ms(200);
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(392, 300);  // Sol
+    sleep_ms(100);      // Pausa
+    som_buz(261, 300);  // Dó
+    sleep_ms(100);      // Pausa
+    som_buz(293, 300);  // Ré
+    sleep_ms(100);      // Pausa
+    som_buz(330, 800);  // Mi longa
+    sleep_ms(300);      // Pausa
 
-    fa(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    re(); sleep_ms(200);
-    re(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    re(); sleep_ms(200);
-
-    sol(); sleep_ms(200);
-    mi(); sleep_ms(200);
-    doh(); sleep_ms(200);
-    re(); sleep_ms(200);
-    mi(); sleep_ms(1500);
+    som_buz(349, 300);  // Fá
+    sleep_ms(100);      // Pausa
+    som_buz(349, 300);  // Fá
+    sleep_ms(100);      // Pausa
+    som_buz(349, 300);  // Fá longa
+    sleep_ms(100);      // Pausa
+    som_buz(349, 300);  // Fá
+    sleep_ms(100);      // Pausa
+    som_buz(349, 300);  // Fá
+    sleep_ms(100);      // Pausa
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(330, 300);  // Mi
+    sleep_ms(100);      // Pausa
+    som_buz(392, 400);  // Sol longa
+    sleep_ms(100);      // Pausa
+    som_buz(392, 500);  // Sol
+    sleep_ms(100);      // Pausa
+    som_buz(349, 500);  // Fá
+    sleep_ms(100);      // Pausa
+    som_buz(293, 500);  // Ré
+    sleep_ms(100);      // Pausa
+    som_buz(261, 1200);
 }
 
 // We wish you a Merry Christmas - Natal 3
