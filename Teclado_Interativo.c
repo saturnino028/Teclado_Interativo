@@ -5,7 +5,7 @@
 #define LED_G       11 //LED verde
 #define LED_B       12 //LED Azul
 #define LED_R       13 //LED Vermelho
-#define buzzer_pin  21 //Buzzer A da BitDog
+#define BUZZER  21 //Buzzer A da BitDog
 
 //definição dos pinos do teclado matricial
 #define lins 4
@@ -27,6 +27,8 @@ void sol();
 void la();
 void si();
 void natal1();
+void natal2();
+void natal3();
 void desligar_tudo();
 
 //Funções
@@ -74,7 +76,7 @@ int main() {
             natal1();
             break;
         case '9':
-            /* code */
+            natal2();
             break;
         case '0':
             /* code */
@@ -217,6 +219,88 @@ void natal1(){
     doh();
 }
 
+void natal2(){
+    //Jingle Bells - Natal 2
+    mi(); sleep_ms(200);
+    mi(); sleep_ms(200);
+    mi(); sleep_ms(400);
+  
+    mi(); sleep_ms(200);
+    mi(); sleep_ms(200);
+    mi(); sleep_ms(400);
+
+    mi(); sleep_ms(200);
+    sol(); sleep_ms(200);
+    doh(); sleep_ms(200);
+    re(); sleep_ms(200);
+    mi(); sleep_ms(600);
+
+    fa(); sleep_ms(200);
+    fa(); sleep_ms(200);
+    fa(); sleep_ms(200);
+    fa(); sleep_ms(200);
+
+    fa(); sleep_ms(200);
+    mi(); sleep_ms(200);
+    mi(); sleep_ms(200);
+    mi(); sleep_ms(200);
+    mi(); sleep_ms(200);
+    re(); sleep_ms(200);
+    re(); sleep_ms(200);
+    mi(); sleep_ms(200);
+    re(); sleep_ms(200);
+
+    sol(); sleep_ms(200);
+    mi(); sleep_ms(200);
+    doh(); sleep_ms(200);
+    re(); sleep_ms(200);
+    mi(); sleep_ms(1500);
+}
+
+void natal3() {
+    // We wish you a Merry Christmas - Natal 3
+    sol(); la(); sol(); fa();
+    mi(); fa();
+    sol(); sol(); sol(); fa();
+    mi(); re();
+    sleep_ms(200);
+
+    la(); la(); sol(); fa();
+    mi(); fa();
+    sol(); sol(); la(); sol();
+    fa();
+    sleep_ms(200);
+
+    la(); la(); si(); la();
+    sol(); fa();
+    sol(); doh(); doh(); si();
+    la(); sol();
+    sleep_ms(400);
+
+    sol(); sol(); la(); sol();
+    fa(); mi(); fa();
+    sol(); sol(); la(); sol();
+    fa();
+    sleep_ms(200);
+
+    la(); la(); si(); la();
+    sol(); fa();
+    sol(); doh(); doh(); si();
+    la(); sol();
+    sleep_ms(400);
+
+    sol(); sol(); la(); sol();
+    fa(); mi(); fa();
+    sol(); sol(); la(); sol();
+    fa();
+    sleep_ms(200);
+
+    la(); la(); si(); la();
+    sol(); fa();
+    sol(); doh(); doh(); si();
+    la(); sol();
+    sleep_ms(800);
+}
 void iniciar_pinos(){
 
     //Iniciar buzzer
