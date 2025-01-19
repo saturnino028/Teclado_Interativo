@@ -29,9 +29,9 @@ void si();
 void natal1();
 void natal2();
 void alarme();
-void desligar_tudo();
-void ligar_tudo();
 void notas();
+void ligar_tudo();
+void desligar_tudo();
 
 //Funções
 int main() {
@@ -213,7 +213,7 @@ void natal1() {
 
     sleep_ms(500);
 
-        som_buz(293, 400);  // Ré
+    som_buz(293, 400);  // Ré
     sleep_ms(200);      // Pausa
     som_buz(293, 400);  // Ré
     sleep_ms(200);      // Pausa
@@ -392,15 +392,7 @@ void desligar_tudo() {
     gpio_put(buzzer_pin, 0); // Desliga o buzzer
 }
 
-// Função para ligar tudo (LEDs e buzzer)
-void ligar_tudo() {
-    gpio_put(LED_G, 1); // Liga o LED verde
-    gpio_put(LED_B, 1); // Liga o LED azul
-    gpio_put(LED_R, 1); // Liga o LED vermelho
-    gpio_put(buzzer_pin, 1); // Liga o buzzer
-    som_infinito(1000); // Toca as notas musicais
-}
-
+//Liga o buzzer por tempo indeterminado
 void som_infinito(uint16_t freq) {
     uint period = 1000000 / freq;  // Período do sinal em microssegundos
 
@@ -418,4 +410,13 @@ void som_infinito(uint16_t freq) {
             break;  // Encerra o loop se '*' for pressionado
         }
     }
+}
+
+// Função para ligar tudo (LEDs e buzzer)
+void ligar_tudo() {
+    gpio_put(LED_G, 1); // Liga o LED verde
+    gpio_put(LED_B, 1); // Liga o LED azul
+    gpio_put(LED_R, 1); // Liga o LED vermelho
+    gpio_put(buzzer_pin, 1); // Liga o buzzer
+    som_infinito(1000); // Toca as notas musicais
 }
