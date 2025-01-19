@@ -2,7 +2,7 @@
 
 Atividade realizada com auxílio do simulador de eletrônica Wokwi para controlar pinos GPIO com o emprego de um teclado matricial 4x4. Com base nas teclas pressionadas, há o acionamento de 3 LEDs (Vermelho, Verde e Azul) e o controle sonoro de um buzzer.
 
-A simulação no Wokwiconta com:
+A simulação no Wokwi conta com:
 
 1) Teclado matricial 4x4;
 2) 3 LEDs (Vermelho, Verde e Azul);
@@ -33,4 +33,5 @@ Cada uma das 16 teclas do teclado matricial 4x4 possui uma funcionalidade:
 ## Demonstração
 
 Simulação na plataforma Wokwi: [Teclado Interativo](https://wokwi.com/projects/420064079477160961).
+
 TODO - Vídeo demonstrando as funcionalidades da solução implementada: [Vídeo Demonstrativo](#).
