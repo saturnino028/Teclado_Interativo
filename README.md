@@ -22,9 +22,9 @@ Cada uma das 16 teclas do teclado matricial 4x4 possui uma funcionalidade:
 - Tecla 7: Toca Nota Musical Sí;
 - Tecla 8: Toca Noite Feliz (música);
 - Tecla 9: Toca Jingle Bells (música);
-- Tecla 0: Toca We Wish You (música);
-- Tecla *: Liga LEDs e Buzzer;
-- Tecla #: Desliga LEDs e Buzzer;
+- Tecla 0: Toca Alarme;
+- Tecla *: Desliga LEDs e Buzzer;
+- Tecla #: Liga LEDs e Buzzer;
 - Tecla A: Liga LED Verde;
 - Tecla B: Liga LED Azul;
 - Tecla C: Liga LED Vermelho;
