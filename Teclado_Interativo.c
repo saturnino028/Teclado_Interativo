@@ -79,7 +79,7 @@ int main() {
             natal2();
             break;
         case '0':
-            /* code */
+            natal3();
             break;
         case 'A':
             gpio_put(LED_G, 1); // Acende o LED verde
