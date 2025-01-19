@@ -34,4 +34,4 @@ Cada uma das 16 teclas do teclado matricial 4x4 possui uma funcionalidade:
 
 Simulação na plataforma Wokwi: [Teclado Interativo](https://wokwi.com/projects/420064079477160961).
 
-Vídeo demonstrando as funcionalidades da solução implementada: [Vídeo Demonstrativo]([url](https://youtu.be/MlUabo6LZWA)).
+Vídeo demonstrando as funcionalidades da solução implementada: ([Vídeo Demonstrativo](https://youtu.be/MlUabo6LZWA)).
