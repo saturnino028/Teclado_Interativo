@@ -142,83 +142,108 @@ void si(){
 }
 
 //Noite Feliz - Natal 1
-void natal1(){
-    sol();
-    sleep_ms(100);
-    la();
-    sol();
-    mi();
+void natal1() {
+    // Noite Feliz - Melodia com notas longas e curtas
+    som_buz(392, 500);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(440, 500);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(392, 500);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(330, 1200); // Mi (nota longa)
+    sleep_ms(400);      // Pausa longa
 
-    sleep_ms(1000);
+    som_buz(392, 500);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(440, 500);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(392, 500);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(330, 1200); // Mi (nota longa)
+    sleep_ms(400);      // Pausa longa
 
-    sol();
-    sleep_ms(100);
-    la();
-    sol();
-    mi();
+    som_buz(294, 500);  // Ré
+    sleep_ms(200);      // Pausa
+    som_buz(294, 500);  // Ré
+    sleep_ms(200);      // Pausa
+    som_buz(246, 800);  // Si
+    sleep_ms(200);      // Pausa
+    som_buz(261, 500);  // Dó
+    sleep_ms(200);      // Pausa
+    som_buz(261, 500);  // Dó longa
+    sleep_ms(400);      // Pausa longa
+    som_buz(220, 900);  // Sol
+    sleep_ms(200);      // Pausa
 
-    sleep_ms(1000);
+     som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(261, 400);  // Dó
+    sleep_ms(200);      // Pausa
+    som_buz(246, 400);  // Si
+    sleep_ms(200);      // Pausa
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(196, 800);  // Sol
+    sleep_ms(400);      // Pausa longa
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(196, 400);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(164, 800);  // Mi
+    sleep_ms(500);
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(261, 400);  // Dó
+    sleep_ms(200);      // Pausa
+    som_buz(246, 400);  // Si
+    sleep_ms(200);      // Pausa
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(196, 800);  // Sol
+    sleep_ms(400);      // Pausa longa
+    som_buz(220, 400);  // Lá
+    sleep_ms(200);      // Pausa
+    som_buz(196, 400);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(164, 800);  // Mi
 
-    re();
-    sleep_ms(100);
-    re();
-    sleep_ms(100);
-    si();
+    sleep_ms(500);
 
-    sleep_ms(1000);
+        som_buz(293, 400);  // Ré
+    sleep_ms(200);      // Pausa
+    som_buz(293, 400);  // Ré
+    sleep_ms(200);      // Pausa
+    som_buz(349, 400);  // Fá
+    sleep_ms(200);      // Pausa
+    som_buz(293, 400);  // Ré
+    sleep_ms(200);      // Pausa
+    som_buz(246, 400);  // Si
+    sleep_ms(200);      // Pausa
+    som_buz(261, 400);  // Dó
+    sleep_ms(200);      // Pausa
+    som_buz(330, 800);  // Mi (longa)
+    sleep_ms(400);      // Pausa longa
 
-    doh();
-    sleep_ms(100);
-    doh();
-    sol();
-
-    sleep_ms(1000);
-
-    la();
-    sleep_ms(100);
-    la();
-    doh();
-    si();
-    la();
-    sol();
-    sleep_ms(100);
-    la();
-    sol();
-    mi();
-
-    sleep_ms(1000);
-
-    la();
-    sleep_ms(100);
-    la();
-    doh();
-    si();
-    la();
-    sol();
-    sleep_ms(100);
-    la();
-    sol();
-    mi();
-
-    re();
-    sleep_ms(100);
-    re();
-    fa();
-    re();
-    si();
-    sleep_ms(100);
-    mi();
-
-    sleep_ms(1000);
-
-    doh();
-    sol();
-    mi();
-    sleep_ms(100);
-    fa();
-    re();
-    doh();
+    som_buz(261, 400);  // Dó
+    sleep_ms(200);      // Pausa
+    som_buz(196, 400);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(330, 400);  // Mi
+    sleep_ms(200);      // Pausa
+    som_buz(196, 400);  // Sol
+    sleep_ms(200);      // Pausa
+    som_buz(349, 400);  // Fá
+    sleep_ms(200);      // Pausa
+    som_buz(293, 400);  // Ré
+    sleep_ms(200);      // Pausa
+    som_buz(261, 400);  // Dó
+    sleep_ms(200);      // Pausa    // Pausa
 }
+
 
 //Jingle Bells - Natal 2
 void natal2(){
