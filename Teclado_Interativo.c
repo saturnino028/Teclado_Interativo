@@ -30,6 +30,8 @@ void natal1();
 void natal2();
 void natal3();
 void desligar_tudo();
+void ligar_tudo();
+void notas();
 
 //Funções
 int main() {
@@ -99,7 +101,7 @@ int main() {
             desligar_tudo();
             break;
         case '#':
-            /* code */
+            ligar_tudo();
             break;
         default:
             break;
@@ -379,4 +381,24 @@ void desligar_tudo() {
     gpio_put(LED_B, 0); // Desliga o LED azul
     gpio_put(LED_R, 0); // Desliga o LED vermelho
     gpio_put(buzzer_pin, 0); // Desliga o buzzer
+}
+
+// Função para ligar tudo (LEDs e buzzer)
+void ligar_tudo() {
+    gpio_put(LED_G, 1); // Liga o LED verde
+    gpio_put(LED_B, 1); // Liga o LED azul
+    gpio_put(LED_R, 1); // Liga o LED vermelho
+    gpio_put(buzzer_pin, 1); // Liga o buzzer
+    notas(); // Toca as notas musicais
+}
+
+// Função para tocar notas musicais
+void notas() {
+    doh();
+    re();
+    mi();
+    fa();
+    sol();
+    la();
+    si();
 }
